@@ -8,6 +8,10 @@
   color: #fff;
 }
 
+.link:hover {
+  color: #B5E5CF;
+}
+
 .brand {
   font-weight: bold;
 }
@@ -32,4 +36,43 @@
 .card-body {
   background-color: #B5E5CF;
   width: 100%;
+}
+
+/* ItemDetails */
+.item-img {
+  width: 300px;
+  margin-bottom: 1rem;
+}
+
+.item-body {
+  background-color: #fff;
+  height: 420px;
+}
+
+.item-title {
+  font-size: 2rem !important;
+}
+
+.item-price {
+  font-size: 1.75rem;
+  text-align: center;
+}
+
+.item-btn {
+  background-color: #B5E5CF !important;
+  border: none !important;
+  color: black !important;
+  padding: 0.65rem !important;
+}
+
+.item-description {
+  border: #ddd solid 1px;
+  padding: 2rem;
+  text-align: left;
+  font-size: 17px;
+}
+
+/* Cart */
+.cart-card {
+  width: 300px;
 }

@@ -7,7 +7,9 @@ export default function Navigation() {
   return (
     <div>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-        <Navbar.Brand href="#home" className="brand">You<span className="special">Shop</span></Navbar.Brand>
+        <Link to="/">
+          <Navbar.Brand href="#home" className="brand">You<span className="special">Shop</span></Navbar.Brand>
+        </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
@@ -21,7 +23,11 @@ export default function Navigation() {
               <p href="" className="mr-3 mt-3">Products</p>
             </Link>
           </Nav>
+            <Link to="/cart" className="link">
+              <p href="" className="mr-3 mt-3">Cart</p>
+            </Link>
         </Navbar.Collapse>
+        
       </Navbar>
     </div>
   )

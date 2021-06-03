@@ -8,7 +8,6 @@ export default function Products() {
   const products = useSelector(state => state.products);
   useEffect(() => {
     if (products.length === 0) getProducts(dispatch);
-    console.log(products)
   },[])
 
   return (
