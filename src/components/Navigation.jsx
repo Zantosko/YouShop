@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 export default function Navigation() {
   return (
     <div>
-      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+      <Navbar collapseOnSelect expand="md" bg="dark" variant="dark">
         <Link to="/">
           <Navbar.Brand href="#home" className="brand">You<span className="special">Shop</span></Navbar.Brand>
         </Link>
@@ -24,7 +24,7 @@ export default function Navigation() {
             </Link>
           </Nav>
             <Link to="/cart" className="link">
-              <p href="" className="mr-3 mt-3">Cart</p>
+              <p href="" className="mr-3 mt-3">Cart <i class="fa-lg fas fa-shopping-cart ml-1"></i></p>
             </Link>
         </Navbar.Collapse>
         

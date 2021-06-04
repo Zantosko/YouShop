@@ -2,50 +2,60 @@ import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { getItemDetails } from '../actions/itemDetail-actions';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+import { Container, Row, Col, Card, Button, Spinner } from 'react-bootstrap';
+import { Link, Redirect } from 'react-router-dom';
 import { addItemToCart } from '../actions/cart-actions'
 
 export default function ItemDetails({ match }) {
   const dispatch = useDispatch();
-  const product = useSelector(state => state.itemDetails)
+  const products = useSelector(state => state.products)
   const pageID = match.params.id;
 
-  useEffect(() => {
-    getItemDetails(dispatch, pageID)
-  },[])
+  if (!products[0]) return (<Redirect to="/err"/>)
+
+  const specificProduct = products[0].filter(product => (product.id == pageID));
+  const extractedProduct = specificProduct[0];
 
   return (
     <div>
       {
-        product[0] != null ?
-        <Container className="mt-5 d-flex flex-column">
+        products[0] != null ?
+        <Container className="mt-5 mb-5 d-flex flex-column">
           <Row>
             <Col xs={12} md={6}>
-                <img src={product[0].image} className="item-img"/>
+                <img src={extractedProduct.image} className="item-img"/>
             </Col>
             <Col xs={12} md={6}>
                 <Card>
                   <Card.Body className="item-body d-flex flex-column justify-content-around">
-                    <Card.Title className="item-title">{product[0].title}</Card.Title>
-                    <Card.Text className="item-price">${product[0].price}</Card.Text>
-                    <Button 
+                    <Card.Title className="item-title">{extractedProduct.title}</Card.Title>
+                    <Card.Text className="item-price">${extractedProduct.price}</Card.Text>
+                    <div className="btn-container">
+                      <Button 
                       className="item-btn"
-                      onClick={() => addItemToCart(dispatch, product[0])}
+                      onClick={() => addItemToCart(dispatch, extractedProduct)}
                       >Add To Cart</Button>
+                      <Link to="/products">
+                        <Button variant="dark" className="back-btn">Go Back</Button>
+                      </Link>
+                    </div>
+                    
                   </Card.Body>
                 </Card> 
             </Col>
           </Row>
           <Row>
             <Col xs={12}>
-              <div className="item-description mt-2">
+              <div className="item-description mt-3">
                 <h4>Description:</h4>
-                {product[0].description}
+                {extractedProduct.description}
               </div>
             </Col>
           </Row>
         </Container> :
-        <p>Loading</p>
+        <Spinner animation="border" role="status">
+          <span className="sr-only">Loading...</span>
+        </Spinner>
       }
     </div>
   )

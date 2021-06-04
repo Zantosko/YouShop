@@ -2,6 +2,50 @@
   text-align: center;
 }
 
+/* Home */
+.Home {
+  background: url("./assets/home-page.jpg") center center/cover;
+  height: 100vh;
+}
+
+.display-container {
+  height: 45% !important;
+}
+
+.display {
+  background: #343B3F;
+}
+
+.display-title {
+  color: #fff;
+  font-weight: bold;
+  font-size: 150px;
+}
+
+.display-sub {
+  color: #fff;
+}
+
+.display-btn {
+  padding: 0.75rem 1rem !important;
+  font-size: 20px !important;
+  background-color: #B5E5CF !important;
+  color: black !important;
+}
+
+/* About */
+.About {
+  background-color: #B5E5CF;
+}
+
+.carousel {
+  height: 70%;
+}
+
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
 /* Navigation */
 .link {
   text-decoration: none !important;
@@ -20,9 +64,20 @@
   color: #B5E5CF;
 }
 
+/* Products */
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 30px;
+}
+
 /* Item */
 .Item {
   width: 300px;
+}
+
+.card {
+  height: 500px;
 }
 
 .card-img-container {
@@ -36,6 +91,10 @@
 .card-body {
   background-color: #B5E5CF;
   width: 100%;
+}
+
+.card-title {
+  font-size: 1.1rem !important;
 }
 
 /* ItemDetails */
@@ -63,6 +122,13 @@
   border: none !important;
   color: black !important;
   padding: 0.65rem !important;
+  width: 100%;
+  margin-bottom: 0.75rem;
+}
+
+.back-btn {
+  padding: 0.65rem !important;
+  width: 100%;
 }
 
 .item-description {
@@ -73,6 +139,103 @@
 }
 
 /* Cart */
+.Cart {
+  height: 100%;
+}
+
 .cart-card {
   width: 300px;
+}
+
+/* Footer */
+.Footer {
+  background-color: #343B3F;
+  padding: 1rem;
+}
+
+.footer-list-item {
+  background-color: inherit !important;
+  border: none !important;
+  color: #fff;
+}
+
+.fa-ellipsis-h {
+  color: #fff;
+}
+
+.inline-items {
+  color: #fff;
+}
+
+.inline-items p {
+  font-size: 14px;
+}
+
+.social {
+  border: #fff solid 1px;
+  padding: 0.75rem;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  transition: all ease 0.5s;
+}
+
+.social:hover {
+  background-color: #B5E5CF;
+  color: black;
+  border: none;
+}
+
+/* ErrorPage */
+.error-img {
+  height: 600px;
+  width: 800px;
+}
+
+.error-btn {
+  background-color: #B5E5CF !important;
+  color: black !important;
+  border: none !important;
+  margin-bottom: 3rem;
+}
+
+/* Media Queries */
+@media (max-width: 500px) {
+  .display-container {
+    height: 35%;
+  }
+
+  .display-title {
+    font-size: 50px !important;
+  }
+  .display-sub {
+    font-size: 20px;
+  }
+
+  .display-btn {
+    padding: 0.5rem !important;
+  }
+}
+
+@media (max-width: 770px) {
+  .display-title {
+    font-size: 75px;
+  }
+}
+
+@media (min-width: 800px) {
+  .display-container {
+    height: 60% !important;
+  }
+
+
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
