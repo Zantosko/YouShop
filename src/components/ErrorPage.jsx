@@ -1,6 +1,5 @@
 import React from 'react';
 import ErrorImage from '../assets/404-image.png';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 

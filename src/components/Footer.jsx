@@ -46,7 +46,7 @@ export default function Footer() {
               <div className="inline-items d-flex justify-content-around pb-2">
                 <i class="social fab fa-twitter"></i>
                 <i class="social fab fa-facebook-f"></i>
-                <i class="social fab fa-linkedin-in"></i>
+                <i class="social fa fab fa-instagram"></i>
               </div>
             </Col>
             <Col md={4}>

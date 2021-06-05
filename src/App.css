@@ -215,11 +215,21 @@
   .display-btn {
     padding: 0.5rem !important;
   }
+
+  .error-img {
+    height: 400px !important;
+    width: 100% !important;
+  }
 }
 
 @media (max-width: 770px) {
   .display-title {
     font-size: 75px;
+  }
+
+  .error-img {
+    height: 500px;
+    width: 100%;
   }
 }
 

@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { getItemDetails } from '../actions/itemDetail-actions';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Row, Col, Card, Button, Spinner } from 'react-bootstrap';
+import { Container, Row, Col, Card, Button, Spinner, Alert } from 'react-bootstrap';
 import { Link, Redirect } from 'react-router-dom';
 import { addItemToCart } from '../actions/cart-actions'
 
@@ -33,7 +32,10 @@ export default function ItemDetails({ match }) {
                     <div className="btn-container">
                       <Button 
                       className="item-btn"
-                      onClick={() => addItemToCart(dispatch, extractedProduct)}
+                      onClick={() => {
+                        addItemToCart(dispatch, extractedProduct)
+                        alert("Item added to cart!")
+                      }}
                       >Add To Cart</Button>
                       <Link to="/products">
                         <Button variant="dark" className="back-btn">Go Back</Button>

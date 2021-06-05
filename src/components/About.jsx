@@ -1,5 +1,4 @@
 import React from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { Carousel, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Image1 from '../assets/about-1.jpg'
